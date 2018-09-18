@@ -1,0 +1,26 @@
+{
+  "tile_header": {
+    "message": "Add-in Modal Demo",
+    "_description": "Header for the add-in tile"
+  },
+  "modal_header_caption": {
+    "message": "Add customer",
+    "_description": "Form used to add a new customer."
+  },
+  "save_button_caption": {
+    "message": "Save",
+    "_description": "Save button caption."
+  },
+  "cancel_button_caption": {
+    "message": "Cancel",
+    "_description": "Cancel button caption."
+  },
+  "first_name_caption": {
+    "message": "First name",
+    "_description": "Caption of the first name field."
+  },
+  "last_name_caption": {
+    "message": "Last name",
+    "_description": "Caption of the last name field."
+  }
+}

@@ -1,0 +1,47 @@
+<sky-modal>
+  <sky-modal-header>
+    {{ 'modal_header_caption' | skyAppResources }}
+  </sky-modal-header>
+  <sky-modal-content>
+    <div *ngIf="errorMessage">
+      <sky-alert alertType="danger">
+        {{ errorMessage }}
+      </sky-alert>
+    </div>
+    <div>
+      This is a sample modal dialog implemented using SKY UX.  The component accepts an optional context object that allows the caller to
+      provide default values for the <b>First name</b> and <b>Last name</b> fields.  When the dialog is closed, context can be passed back
+      to the calling application.
+    </div>
+    <br />
+    <div>
+      (Note:  this is just a sample, nothing is actually saved)
+    </div>
+    <br />
+    <div class="sky-form-group">
+      <label for="first_name" class="sky-control-label">
+          {{ 'first_name_caption' | skyAppResources }}
+      </label>
+      <input id="first_name" type="text" class="sky-form-control" [(ngModel)]="context.first">
+    </div>
+    <div class="sky-form-group">
+      <label for="last_name" class="sky-control-label sky-control-label-required">
+          {{ 'last_name_caption' | skyAppResources }}
+      </label>
+      <input id="last_name" type="text" class="sky-form-control" [(ngModel)]="context.last">
+    </div>
+    <sky-checkbox [(ngModel)]="simulateErrorOnSave">
+      <sky-checkbox-label>
+        Simulate error on save?
+      </sky-checkbox-label>
+    </sky-checkbox>
+  </sky-modal-content>
+  <sky-modal-footer>
+    <button type="button" class="sky-btn sky-btn-primary" (click)="save()">
+      {{ 'save_button_caption' | skyAppResources }}
+    </button>
+    <button type="button"class="sky-btn sky-btn-link" (click)="instance.cancel()">
+      {{ 'cancel_button_caption' | skyAppResources }}
+    </button>
+  </sky-modal-footer>
+</sky-modal>

@@ -1,0 +1,34 @@
+{
+  "name": "blackbaud-skyux-spa-addin-modal-demo",
+  "version": "0.0.1",
+  "description": "A sample SKY Add-in using SKY UX that demonstrates a tile and a modal.",
+  "main": "index.js",
+  "engines": {
+    "node": ">=6.11.1"
+  },
+  "scripts": {
+    "skyux": "skyux",
+    "build": "skyux build",
+    "test": "skyux test",
+    "test:watch": "skyux watch",
+    "start": "skyux serve",
+    "e2e": "skyux e2e",
+    "lint": "skyux lint"
+  },
+  "keywords": [],
+  "author": "Blackbaud, Inc.",
+  "license": "MIT",
+  "dependencies": {
+    "@blackbaud/skyux": "2.25.0",
+    "@blackbaud/sky-addin-client": "^1.0.2",
+    "@blackbaud/skyux-lib-addin-client": "^1.1.2"
+  },
+  "devDependencies": {
+    "@blackbaud/skyux-builder": "1.21.0"
+  },
+  "peerDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blackbaud/addin-modal-demo"
+  }
+}

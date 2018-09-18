@@ -1,0 +1,33 @@
+<div>
+  <h1>{{ 'tile_header' | skyAppResources }}</h1>
+
+  <p>
+    The SKY Add-in framework supports showing modal dialogs that require user action before returning to the parent application.  The modal dialog will be rendered in a separate, full-screen iframe from the parent add-in and can even be implemented using a different UX framework from the parent add-in.
+  </p>
+
+  <div>
+    <p>
+      The following button shows a modal implemented using vanilla HTML, CSS, and JavaScript - the modal itself is implemented in a
+      separate <a href="https://github.com/blackbaud/addin-hello-world" target="_blank">hello world</a> web application:
+    </p>
+    <button type="button" class="sky-btn sky-btn-default" style="display: inline-block" (click)="showSimpleModal()">Show a simple modal</button>
+  </div>
+
+  <div>
+    <p>
+      Modals can be implemented within the same web application as the parent add-in.  The following button shows a modal implemented using
+      SKY UX:
+    </p>
+    <button type="button" class="sky-btn sky-btn-default" style="display: inline-block" (click)="showSkyUxModal()">Show <b>Add customer</b> modal</button>
+  </div>
+
+  <div *ngIf="modalResponse">
+    <p></p>
+    <sky-alert alertType="info" closeable="true">
+      The modal returned the following context:
+      <br />
+      <span>{{ modalResponse }}</span>
+    </sky-alert>
+  </div>
+
+</div>

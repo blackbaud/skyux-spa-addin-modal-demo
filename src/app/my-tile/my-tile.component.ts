@@ -37,7 +37,7 @@ export class MyTileComponent implements OnInit {
   }
 
   public showSimpleModal() {
-    // start with the context provided to this add-in, and pass an additional value to the modal
+    // define context for the modal
     let context = {
       anotherValue: 'this value was passed to the modal'
     };
@@ -46,6 +46,7 @@ export class MyTileComponent implements OnInit {
   }
 
   public showSkyUxModal() {
+    // define context for the modal
     let context = {
       firstName: 'John',
       lastName: 'Doe'

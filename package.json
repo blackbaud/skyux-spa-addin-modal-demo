@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "@blackbaud/skyux": "2.25.0",
-    "@blackbaud/sky-addin-client": "^1.0.2",
+    "@blackbaud/sky-addin-client": "^1.0.3",
     "@blackbaud/skyux-lib-addin-client": "^1.1.2"
   },
   "devDependencies": {

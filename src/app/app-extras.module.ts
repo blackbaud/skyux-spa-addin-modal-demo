@@ -11,7 +11,14 @@ import {
 } from './add-customer/add-customer-modal.component';
 
 // Specify entry components, module-level providers, etc. here.
+import {
+  AppSkyModule
+} from './app-sky.module';
+
 @NgModule({
+  exports: [
+    AppSkyModule
+  ],
   providers: [
     AddinClientService
   ],

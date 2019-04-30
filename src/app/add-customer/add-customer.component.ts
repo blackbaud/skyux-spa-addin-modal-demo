@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { SkyModalService, SkyModalCloseArgs } from '@blackbaud/skyux/dist/core';
+
+import {
+  SkyModalCloseArgs,
+  SkyModalService
+} from '@skyux/modals';
+
 import { AddCustomerModalComponent } from './add-customer-modal.component';
 import { AddCustomerContext } from './add-customer-context';
 import { AddCustomerModalContext } from './add-customer-modal-context';

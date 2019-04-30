@@ -3,9 +3,12 @@ import {
 } from '@angular/core';
 
 import {
-  SkyModalInstance,
   SkyWaitService
-} from '@blackbaud/skyux/dist/core';
+} from '@skyux/indicators';
+
+import {
+  SkyModalInstance
+} from '@skyux/modals';
 
 import {
   AddCustomerModalContext

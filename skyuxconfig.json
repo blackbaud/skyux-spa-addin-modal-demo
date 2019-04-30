@@ -1,5 +1,11 @@
 {
+  "$schema": "./node_modules/@skyux/config/skyuxconfig-schema.json",
   "mode": "easy",
   "compileMode": "aot",
-  "a11y": true
+  "a11y": true,
+  "app": {
+    "styles": [
+      "@skyux/theme/css/sky.css"
+    ]
+  }
 }

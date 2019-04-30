@@ -29,3 +29,6 @@ dist
 
 # IntelliJ files
 .idea
+
+# SKY UX temporary files
+.skypagestmp

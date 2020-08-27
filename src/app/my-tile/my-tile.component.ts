@@ -11,6 +11,10 @@ import {
   AddinClientInitArgs
 } from '@blackbaud/sky-addin-client';
 
+import {
+  SkyModalCloseArgs
+} from '@skyux/modals';
+
 @Component({
   selector: 'my-tile',
   templateUrl: './my-tile.component.html',
@@ -61,7 +65,7 @@ export class MyTileComponent implements OnInit {
     this.addinClientService.showModal({
       url: url,
       context: context
-    }).subscribe(modalResponse => {
+    }).subscribe((modalResponse: SkyModalCloseArgs) => {
       this.modalResponse = JSON.stringify(modalResponse, undefined, 2);
     });
   }

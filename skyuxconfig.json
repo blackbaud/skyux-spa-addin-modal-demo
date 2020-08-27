@@ -4,8 +4,11 @@
   "compileMode": "aot",
   "a11y": true,
   "app": {
-    "styles": [
-      "@skyux/theme/css/sky.css"
-    ]
+    "styles": []
+  },
+  "host": {
+    "frameOptions": {
+      "blackbaud": true
+    }
   }
 }

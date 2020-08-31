@@ -1,9 +1,13 @@
 language: node_js
-sudo: required
-dist: trusty
+
+addons:
+  chrome: stable
+
+services:
+  - xvfb
 
 git:
-  depth: 10
+  depth: 5
 
 branches:
   only:
@@ -14,17 +18,10 @@ cache:
   directories:
     - node_modules
 
-# http://blog.500tech.com/setting-up-travis-ci-to-run-tests-on-latest-google-chrome-version/
 before_install:
-  - export CHROME_BIN=/usr/bin/google-chrome
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - sudo apt-get update
-  - sudo apt-get install -y libappindicator1 fonts-liberation
-  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  - sudo dpkg -i google-chrome*.deb
-  - rm google-chrome*.deb
-  - npm install -g @blackbaud/skyux-cli
+  - npm install -g @skyux-sdk/cli
+  - skyux version
+  - skyux certs install
 
 # Identical to package.json except for travis wait
 script:

@@ -15,7 +15,7 @@ import {
 } from './add-customer-modal-context';
 
 @Component({
-  selector: 'add-customer-modal',
+  selector: 'app-add-customer-modal',
   templateUrl: './add-customer-modal.component.html'
 })
 export class AddCustomerModalComponent {

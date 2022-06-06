@@ -12,7 +12,7 @@ import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
 import { AddinClientInitArgs } from '@blackbaud/sky-addin-client';
 
 @Component({
-    selector: 'add-customer',
+    selector: 'app-add-customer',
     templateUrl: './add-customer.component.html',
     styleUrls: ['./add-customer.component.scss']
 })

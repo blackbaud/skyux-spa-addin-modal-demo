@@ -16,7 +16,7 @@ import {
 } from '@skyux/modals';
 
 @Component({
-  selector: 'my-tile',
+  selector: 'app-my-tile',
   templateUrl: './my-tile.component.html',
   styleUrls: ['./my-tile.component.scss']
 })

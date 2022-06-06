@@ -22,5 +22,9 @@
   "last_name_caption": {
     "message": "Last name",
     "_description": "Caption of the last name field."
+  },
+  "skyux_page_not_found_iframe_title": {
+    "message": "Page not found",
+    "_description": "A string value to represent the Page Not Found iframe title attribute."
   }
 }

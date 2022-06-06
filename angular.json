@@ -28,8 +28,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "@skyux/theme/css/sky.css"
+              "node_modules/@skyux/theme/css/sky.css",
+              "node_modules/@skyux/theme/css/themes/modern/styles.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -97,7 +98,8 @@
               "src/assets"
             ],
             "styles": [
-              "@skyux/theme/css/sky.css"
+              "node_modules/@skyux/theme/css/sky.css",
+              "node_modules/@skyux/theme/css/themes/modern/styles.css"
             ],
             "scripts": []
           }

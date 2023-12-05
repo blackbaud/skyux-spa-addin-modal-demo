@@ -19,7 +19,7 @@ import {
   templateUrl: './add-customer-modal.component.html'
 })
 export class AddCustomerModalComponent {
-  public errorMessage: string;
+  public errorMessage: string | undefined;
   public simulateErrorOnSave: boolean = false;
 
   constructor(

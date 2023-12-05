@@ -28,6 +28,10 @@ import {
 } from '@skyux/assets';
 
 import {
+  SkyThemeService
+} from '@skyux/theme';
+
+import {
   AddCustomerModalComponent
 } from './add-customer/add-customer-modal.component';
 
@@ -106,7 +110,8 @@ import {
           return undefined;
         }
       }
-    }
+    },
+    SkyThemeService
   ]
 })
 export class SkyPagesModule { }

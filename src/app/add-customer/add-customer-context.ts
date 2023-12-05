@@ -1,4 +1,4 @@
 export class AddCustomerContext {
-  public firstName: string;
-  public lastName: string;
+  public firstName: string | undefined;
+  public lastName: string | undefined;
 }

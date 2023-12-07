@@ -17,8 +17,8 @@ import { AddinClientInitArgs } from '@blackbaud/sky-addin-client';
     styleUrls: ['./add-customer.component.scss']
 })
 export class AddCustomerComponent implements OnInit {
-  private environmentId: string;
-  private context: AddCustomerContext;
+  private environmentId!: string | undefined;
+  private context!: AddCustomerContext;
 
   constructor(
     private modalService: SkyModalService,

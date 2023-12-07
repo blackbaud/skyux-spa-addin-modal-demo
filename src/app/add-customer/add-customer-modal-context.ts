@@ -1,5 +1,5 @@
 export class AddCustomerModalContext {
-  public envId: string;
-  public first: string;
-  public last: string;
+  public envId: string | undefined;
+  public first: string | undefined;
+  public last: string | undefined;
 }

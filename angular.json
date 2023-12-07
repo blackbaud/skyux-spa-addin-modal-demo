@@ -115,9 +115,5 @@
         }
       }
     }
-  },
-  "defaultProject": "addin-modal-demo",
-  "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
   }
 }

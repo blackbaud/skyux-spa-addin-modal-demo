@@ -31,7 +31,7 @@
 </button>
 
 <p *ngIf="modalResponse">
-  <sky-alert alertType="info" closeable="true">
+  <sky-alert alertType="info" [closeable]="true">
     The modal returned the following context:
     <br />
     <span>{{ modalResponse }}</span>

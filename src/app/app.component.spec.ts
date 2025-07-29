@@ -5,15 +5,17 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: 'skyux-app-shell',
-  template: '<div class="shell-wrapper"><ng-content></ng-content></div>'
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'skyux-app-shell',
+    template: '<div class="shell-wrapper"><ng-content></ng-content></div>',
+    standalone: false
 })
 class MockShellComponent { }
 
 @Component({
-  selector: 'app-mock-shell',
-  template: '<div class="hello-test">Hello</div>'
+    selector: 'app-mock-shell',
+    template: '<div class="hello-test">Hello</div>',
+    standalone: false
 })
 class AppRouteTestComponent { }
 

@@ -15,8 +15,9 @@ import {
 } from './add-customer-modal-context';
 
 @Component({
-  selector: 'app-add-customer-modal',
-  templateUrl: './add-customer-modal.component.html'
+    selector: 'app-add-customer-modal',
+    templateUrl: './add-customer-modal.component.html',
+    standalone: false
 })
 export class AddCustomerModalComponent {
   public errorMessage: string | undefined;

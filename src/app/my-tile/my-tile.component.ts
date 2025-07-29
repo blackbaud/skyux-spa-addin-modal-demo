@@ -16,9 +16,10 @@ import {
 } from '@skyux/modals';
 
 @Component({
-  selector: 'app-my-tile',
-  templateUrl: './my-tile.component.html',
-  styleUrls: ['./my-tile.component.scss']
+    selector: 'app-my-tile',
+    templateUrl: './my-tile.component.html',
+    styleUrls: ['./my-tile.component.scss'],
+    standalone: false
 })
 export class MyTileComponent implements OnInit {
   public environmentId!: string | undefined;

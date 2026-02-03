@@ -5,6 +5,6 @@ import {
 @Component({
     selector: 'app-root-route-index',
     templateUrl: './index.component.html',
-    standalone: false
+    standalone: true
 })
 export class RootRouteIndexComponent { }

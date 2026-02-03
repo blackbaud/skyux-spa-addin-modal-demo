@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 
 import {
   SkyModalCloseArgs,
@@ -15,16 +15,14 @@ import { AddinClientInitArgs } from '@blackbaud/sky-addin-client';
     selector: 'app-add-customer',
     templateUrl: './add-customer.component.html',
     styleUrls: ['./add-customer.component.scss'],
-    standalone: false
+    standalone: true
 })
 export class AddCustomerComponent implements OnInit {
   private environmentId!: string | undefined;
   private context!: AddCustomerContext;
 
-  constructor(
-    private modalService: SkyModalService,
-    private addinClientService: AddinClientService
-  ) {}
+  private modalService = inject(SkyModalService);
+  private addinClientService = inject(AddinClientService);
 
   public ngOnInit() {
     this.addinClientService.args.subscribe((args: AddinClientInitArgs) => {

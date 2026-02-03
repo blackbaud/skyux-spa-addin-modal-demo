@@ -8,14 +8,14 @@ import { AppComponent } from './app.component';
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'skyux-app-shell',
     template: '<div class="shell-wrapper"><ng-content></ng-content></div>',
-    standalone: false
+    standalone: true
 })
 class MockShellComponent { }
 
 @Component({
     selector: 'app-mock-shell',
     template: '<div class="hello-test">Hello</div>',
-    standalone: false
+    standalone: true
 })
 class AppRouteTestComponent { }
 

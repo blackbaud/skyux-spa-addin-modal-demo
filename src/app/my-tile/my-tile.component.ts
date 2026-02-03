@@ -1,7 +1,16 @@
 import {
   Component,
-  OnInit
+  OnInit,
+  inject
 } from '@angular/core';
+
+import {
+  SkyAlertModule
+} from '@skyux/indicators';
+
+import {
+  SkyI18nModule
+} from '@skyux/i18n';
 
 import {
   AddinClientService
@@ -19,15 +28,17 @@ import {
     selector: 'app-my-tile',
     templateUrl: './my-tile.component.html',
     styleUrls: ['./my-tile.component.scss'],
-    standalone: false
+    standalone: true,
+    imports: [
+      SkyAlertModule,
+      SkyI18nModule
+    ]
 })
 export class MyTileComponent implements OnInit {
   public environmentId!: string | undefined;
   public modalResponse: string | undefined;
 
-  constructor(
-    private addinClientService: AddinClientService
-  ) {}
+  private addinClientService = inject(AddinClientService);
 
   public ngOnInit() {
     this.addinClientService.args.subscribe((args: AddinClientInitArgs) => {

@@ -1,14 +1,32 @@
 import {
-  Component
+  Component,
+  inject
 } from '@angular/core';
+
+import {
+  FormsModule
+} from '@angular/forms';
+
+import {
+  SkyAlertModule
+} from '@skyux/indicators';
+
+import {
+  SkyCheckboxModule
+} from '@skyux/forms';
 
 import {
   SkyWaitService
 } from '@skyux/indicators';
 
 import {
-  SkyModalInstance
+  SkyModalInstance,
+  SkyModalModule
 } from '@skyux/modals';
+
+import {
+  SkyI18nModule
+} from '@skyux/i18n';
 
 import {
   AddCustomerModalContext
@@ -17,17 +35,22 @@ import {
 @Component({
     selector: 'app-add-customer-modal',
     templateUrl: './add-customer-modal.component.html',
-    standalone: false
+    standalone: true,
+    imports: [
+      FormsModule,
+      SkyModalModule,
+      SkyAlertModule,
+      SkyCheckboxModule,
+      SkyI18nModule
+    ]
 })
 export class AddCustomerModalComponent {
   public errorMessage: string | undefined;
   public simulateErrorOnSave: boolean = false;
 
-  constructor(
-    public context: AddCustomerModalContext,
-    public instance: SkyModalInstance,
-    private waitSvc: SkyWaitService
-  ) { }
+  public context = inject(AddCustomerModalContext);
+  public instance = inject(SkyModalInstance);
+  private waitSvc = inject(SkyWaitService);
 
   public save() {
     this.waitSvc.beginBlockingPageWait();

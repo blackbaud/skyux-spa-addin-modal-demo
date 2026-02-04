@@ -75,9 +75,7 @@ import {
     ReactiveFormsModule,
     RouterModule,
     SkyAppLinkModule,
-    SkyI18nModule
-  ],
-  declarations: [
+    SkyI18nModule,
     AddCustomerComponent,
     AddCustomerModalComponent,
     AddCustomerRouteIndexComponent,

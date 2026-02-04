@@ -3,11 +3,13 @@
     {{ 'modal_header_caption' | skyAppResources }}
   </sky-modal-header>
   <sky-modal-content>
-    <div *ngIf="errorMessage">
-      <sky-alert alertType="danger">
-        {{ errorMessage }}
-      </sky-alert>
-    </div>
+    @if (errorMessage) {
+      <div>
+        <sky-alert alertType="danger">
+          {{ errorMessage }}
+        </sky-alert>
+      </div>
+    }
     <div>
       This is a sample modal dialog implemented using SKY UX.  The component accepts an optional context object that allows the caller to
       provide default values for the <b>First name</b> and <b>Last name</b> fields.  When the dialog is closed, context can be passed back

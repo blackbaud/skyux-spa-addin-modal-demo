@@ -3,5 +3,9 @@
     140
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
+  "github.copilot.chat.planAgent.additionalTools": [
+    "angular-cli/*",
+    "skyux-cli/*"
+  ],
   "eslint.useFlatConfig": false
 }

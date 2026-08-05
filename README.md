@@ -11,3 +11,17 @@ For more information on Blackbaud's SKY Add-in framework, see https://developer.
 - Clone this repo locally
 - Navigate to the repo folder in a command prompt, and run `npm install` to install the required modules
 - Run `ng serve -o` to serve the SPA locally
+
+## Modal background
+
+The add-customer route uses
+`modalConfig.style.transparentBackground: true` and
+`modalConfig.style.hostOverlay: false`. The base client makes the iframe body transparent,
+the compatible host makes its overlay transparent, and the normal SKY UX modal backdrop
+remains the single visible scrim. No `::ng-deep` override is required.
+
+To test this route from a local HTTPS add-in host, serve it on port 4201 with the trusted SKY UX development certificate:
+
+```powershell
+npm start -- --ssl --ssl-cert "$HOME\.skyux\certs\skyux-server.crt" --ssl-key "$HOME\.skyux\certs\skyux-server.key" --port 4201
+```

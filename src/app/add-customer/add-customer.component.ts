@@ -32,7 +32,13 @@ export class AddCustomerComponent implements OnInit {
       this.openModal();
 
       args.ready({
-        showUI: true
+        showUI: true,
+        modalConfig: {
+          style: {
+            hostOverlay: false,
+            transparentBackground: true
+          }
+        }
       });
     });
   }

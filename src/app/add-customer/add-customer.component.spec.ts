@@ -24,7 +24,7 @@ describe('AddCustomerComponent', () => {
         firstName: 'Ada',
         lastName: 'Lovelace'
       },
-      displayMode: 'modal',
+      addinType: 'modal',
       envId: 'test-environment',
       ready
     };

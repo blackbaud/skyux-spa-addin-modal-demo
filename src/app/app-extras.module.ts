@@ -7,8 +7,16 @@ import {
 } from '@blackbaud/skyux-lib-addin-client';
 
 import {
+  SkyHelpService
+} from '@skyux/core';
+
+import {
   AddCustomerModalComponent
 } from './add-customer/add-customer-modal.component';
+
+import {
+  AddinHelpService
+} from './addin-help.service';
 
 // Specify entry components, module-level providers, etc. here.
 import {
@@ -24,7 +32,11 @@ import {
         AppSkyModule
     ],
     providers: [
-        AddinClientService
+        AddinClientService,
+        {
+            provide: SkyHelpService,
+            useClass: AddinHelpService
+        }
     ]
 })
 export class AppExtrasModule { }

@@ -1,7 +1,8 @@
 import {
   Component,
   OnInit,
-  inject
+  inject,
+  signal
 } from '@angular/core';
 
 import {
@@ -36,7 +37,7 @@ import {
 })
 export class MyTileComponent implements OnInit {
   public environmentId!: string | undefined;
-  public modalResponse: string | undefined;
+  public modalResponse = signal<string | undefined>(undefined);
 
   private addinClientService = inject(AddinClientService);
 
@@ -71,13 +72,13 @@ export class MyTileComponent implements OnInit {
   }
 
   private showModal(url: string, context: any) {
-    this.modalResponse = undefined;
+    this.modalResponse.set(undefined);
 
     this.addinClientService.showModal({
       url: url,
       context: context
     }).subscribe((modalResponse: SkyModalCloseArgs) => {
-      this.modalResponse = JSON.stringify(modalResponse, undefined, 2);
+      this.modalResponse.set(JSON.stringify(modalResponse, undefined, 2));
     });
   }
 

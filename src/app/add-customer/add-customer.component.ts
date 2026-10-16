@@ -50,8 +50,7 @@ export class AddCustomerComponent implements OnInit {
         providers: [{
           provide: AddCustomerModalContext,
           useValue: context
-        }],
-        helpKey: 'bb-constituents.html'
+        }]
     };
 
     const modalInstance = this.modalService.open(AddCustomerModalComponent, options);
@@ -60,13 +59,6 @@ export class AddCustomerComponent implements OnInit {
       // inform the host that the modal was closed and return the context
       this.addinClientService.closeModal({
         context: result
-      });
-    });
-
-    modalInstance.helpOpened.subscribe((helpKey: string) => {
-      // the help icon in the modal chrome was clicked, so open the help window
-      this.addinClientService.openHelp({
-        helpKey: helpKey
       });
     });
   }

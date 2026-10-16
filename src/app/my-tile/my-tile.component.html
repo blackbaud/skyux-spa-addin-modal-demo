@@ -30,12 +30,12 @@
   Show <b>Add customer</b> modal
 </button>
 
-@if (modalResponse) {
+@if (modalResponse()) {
   <p>
     <sky-alert alertType="info" [closeable]="true">
       The modal returned the following context:
       <br />
-      <span>{{ modalResponse }}</span>
+      <span>{{ modalResponse() }}</span>
     </sky-alert>
   </p>
 }

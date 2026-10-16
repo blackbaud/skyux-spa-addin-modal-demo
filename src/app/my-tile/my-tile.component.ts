@@ -1,6 +1,7 @@
 import {
   Component,
   OnInit,
+  DOCUMENT,
   inject,
   signal
 } from '@angular/core';
@@ -39,6 +40,7 @@ export class MyTileComponent implements OnInit {
   public modalResponse = signal<string | undefined>(undefined);
 
   private addinClientService = inject(AddinClientService);
+  private document = inject(DOCUMENT);
 
   public ngOnInit() {
     this.addinClientService.args.subscribe((args: AddinClientInitArgs) => {
@@ -67,7 +69,8 @@ export class MyTileComponent implements OnInit {
       lastName: 'Doe'
     };
 
-    this.showModal('https://localhost:4200/add-customer', context);
+    // Open the modal from wherever this SPA is served, over HTTP or HTTPS.
+    this.showModal(new URL('add-customer', this.document.baseURI).href, context);
   }
 
   private showModal(url: string, context: any) {

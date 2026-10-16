@@ -12,12 +12,15 @@ import { Subject, of } from 'rxjs';
 import { MyTileComponent } from './my-tile.component';
 
 describe('MyTileComponent', () => {
-  it('should show the context the modal returns', async () => {
+  function setup() {
     const modalResponse = new Subject<SkyModalCloseArgs>();
     const initArgs: AddinClientInitArgs = {
       envId: 'test-environment',
       ready: jasmine.createSpy('ready')
     };
+    const showModal = jasmine
+      .createSpy('showModal')
+      .and.returnValue(modalResponse);
 
     TestBed.configureTestingModule({
       imports: [MyTileComponent],
@@ -28,9 +31,7 @@ describe('MyTileComponent', () => {
           provide: AddinClientService,
           useValue: {
             args: of(initArgs),
-            showModal: jasmine
-              .createSpy('showModal')
-              .and.returnValue(modalResponse)
+            showModal
           }
         },
         {
@@ -44,13 +45,41 @@ describe('MyTileComponent', () => {
     });
 
     const fixture = TestBed.createComponent(MyTileComponent);
-    const loader = TestbedHarnessEnvironment.loader(fixture);
     fixture.detectChanges();
 
-    const showButton = Array.from(
-      (fixture.nativeElement as HTMLElement).querySelectorAll('button')
-    ).find((button) => button.textContent?.includes('Add customer'));
-    showButton?.click();
+    return {
+      fixture,
+      loader: TestbedHarnessEnvironment.loader(fixture),
+      modalResponse,
+      showModal
+    };
+  }
+
+  function clickShowAddCustomer(fixture: { nativeElement: unknown }): void {
+    Array.from((fixture.nativeElement as HTMLElement).querySelectorAll('button'))
+      .find((button) => button.textContent?.includes('Add customer'))
+      ?.click();
+  }
+
+  it('should open the Add customer modal from the same origin as the tile', () => {
+    const { fixture, showModal } = setup();
+
+    clickShowAddCustomer(fixture);
+
+    // The demo works whether it's served over HTTP or HTTPS.
+    expect(showModal).toHaveBeenCalledOnceWith({
+      url: `${window.location.origin}/add-customer`,
+      context: {
+        firstName: 'John',
+        lastName: 'Doe'
+      }
+    });
+  });
+
+  it('should show the context the modal returns', async () => {
+    const { fixture, loader, modalResponse } = setup();
+
+    clickShowAddCustomer(fixture);
     fixture.detectChanges();
 
     // The host returns the modal's result later, after the tile has rendered.

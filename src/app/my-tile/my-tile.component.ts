@@ -28,7 +28,6 @@ import {
 @Component({
     selector: 'app-my-tile',
     templateUrl: './my-tile.component.html',
-    styleUrls: ['./my-tile.component.scss'],
     standalone: true,
     imports: [
       SkyAlertModule,

@@ -11,3 +11,7 @@ For more information on Blackbaud's SKY Add-in framework, see https://developer.
 - Clone this repo locally
 - Navigate to the repo folder in a command prompt, and run `npm install` to install the required modules
 - Run `ng serve -o` to serve the SPA locally
+
+## Modal background
+
+The add-customer modal doesn't set `modalConfig.style` in its `ready()` call. Starting in version 15, `@blackbaud/skyux-lib-addin-client` gives a modal add-in a transparent background, so the host page shows through behind the SKY UX modal's backdrop. Earlier versions of this demo used `::ng-deep` rules to make the body transparent and hide the backdrop; they're no longer needed.

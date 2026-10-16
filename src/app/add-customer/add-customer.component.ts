@@ -14,7 +14,6 @@ import { AddinClientInitArgs } from '@blackbaud/sky-addin-client';
 @Component({
     selector: 'app-add-customer',
     templateUrl: './add-customer.component.html',
-    styleUrls: ['./add-customer.component.scss'],
     standalone: true
 })
 export class AddCustomerComponent implements OnInit {

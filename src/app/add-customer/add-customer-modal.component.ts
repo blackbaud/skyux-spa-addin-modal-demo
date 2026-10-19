@@ -1,6 +1,7 @@
 import {
   Component,
-  inject
+  inject,
+  signal
 } from '@angular/core';
 
 import {
@@ -45,7 +46,7 @@ import {
     ]
 })
 export class AddCustomerModalComponent {
-  public errorMessage: string | undefined;
+  public errorMessage = signal<string | undefined>(undefined);
   public simulateErrorOnSave: boolean = false;
 
   public context = inject(AddCustomerModalContext);
@@ -59,7 +60,7 @@ export class AddCustomerModalComponent {
     setTimeout(() => {
       this.waitSvc.endBlockingPageWait();
       if (this.simulateErrorOnSave) {
-        this.errorMessage = "An error occurred, couldn't save";
+        this.errorMessage.set("An error occurred, couldn't save");
       } else {
         this.instance.save({
           id: 6,

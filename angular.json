@@ -30,7 +30,8 @@
             "styles": [
               "node_modules/@skyux/theme/css/sky.css",
               "node_modules/@skyux/theme/css/themes/modern/styles.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/app/skyux15-compat.css"
             ],
             "scripts": []
           },
@@ -98,7 +99,8 @@
             ],
             "styles": [
               "node_modules/@skyux/theme/css/sky.css",
-              "node_modules/@skyux/theme/css/themes/modern/styles.css"
+              "node_modules/@skyux/theme/css/themes/modern/styles.css",
+              "src/app/skyux15-compat.css"
             ],
             "scripts": []
           }

@@ -1,12 +1,12 @@
-<sky-modal>
-  <sky-modal-header>
-    {{ 'modal_header_caption' | skyAppResources }}
-  </sky-modal-header>
+<sky-modal
+  helpKey="bb-constituents.html"
+  [headingText]="'modal_header_caption' | skyAppResources"
+>
   <sky-modal-content>
-    @if (errorMessage) {
+    @if (errorMessage()) {
       <div>
         <sky-alert alertType="danger">
-          {{ errorMessage }}
+          {{ errorMessage() }}
         </sky-alert>
       </div>
     }

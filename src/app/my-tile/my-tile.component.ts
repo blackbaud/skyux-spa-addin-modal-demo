@@ -1,7 +1,9 @@
 import {
   Component,
   OnInit,
-  inject
+  DOCUMENT,
+  inject,
+  signal
 } from '@angular/core';
 
 import {
@@ -27,7 +29,6 @@ import {
 @Component({
     selector: 'app-my-tile',
     templateUrl: './my-tile.component.html',
-    styleUrls: ['./my-tile.component.scss'],
     standalone: true,
     imports: [
       SkyAlertModule,
@@ -36,9 +37,10 @@ import {
 })
 export class MyTileComponent implements OnInit {
   public environmentId!: string | undefined;
-  public modalResponse: string | undefined;
+  public modalResponse = signal<string | undefined>(undefined);
 
   private addinClientService = inject(AddinClientService);
+  private document = inject(DOCUMENT);
 
   public ngOnInit() {
     this.addinClientService.args.subscribe((args: AddinClientInitArgs) => {
@@ -67,17 +69,18 @@ export class MyTileComponent implements OnInit {
       lastName: 'Doe'
     };
 
-    this.showModal('https://localhost:4200/add-customer', context);
+    // Open the modal from wherever this SPA is served, over HTTP or HTTPS.
+    this.showModal(new URL('add-customer', this.document.baseURI).href, context);
   }
 
   private showModal(url: string, context: any) {
-    this.modalResponse = undefined;
+    this.modalResponse.set(undefined);
 
     this.addinClientService.showModal({
       url: url,
       context: context
     }).subscribe((modalResponse: SkyModalCloseArgs) => {
-      this.modalResponse = JSON.stringify(modalResponse, undefined, 2);
+      this.modalResponse.set(JSON.stringify(modalResponse, undefined, 2));
     });
   }
 
